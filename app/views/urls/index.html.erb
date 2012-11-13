@@ -1,0 +1,5 @@
+<h1>All Urls</h1>
+
+<% @urls.each do |url| %>
+<%= link_to url.orig_url, "http://#{url.orig_url}"%> <%= link_to url.short_url, url.short_url %><br />
+<% end %>
