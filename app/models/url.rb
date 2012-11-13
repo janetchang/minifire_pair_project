@@ -1,5 +1,4 @@
 class Url < ActiveRecord::Base
-  attr_accessible :orig_url, :short_url
-
+  attr_accessible :orig_url, :short_url, :impressions
 
 end
