@@ -8,7 +8,7 @@ class UrlsController < ApplicationController
 
   def create
     @url = Url.new(params[:url])
-    @url.short_url = ('a'..'z').to_a.shuffle[0,4].join
+    @url.short_url = ('a'..'z').to_a.shuffle[0,4].join if @url.short_url == ""
     @url.impressions = 0
     if @url.save
       flash[:notice] = "Success!"
