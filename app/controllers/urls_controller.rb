@@ -3,9 +3,6 @@ class UrlsController < ApplicationController
 
   def index
     @urls = Url.all
-  end
-
-  def new
     @url = Url.new
   end
 
@@ -13,12 +10,17 @@ class UrlsController < ApplicationController
     @url = Url.new(params[:url])
     @url.short_url = ('a'..'z').to_a.shuffle[0,4].join
     @url.impressions = 0
-    @url.save
-    redirect_to new_url_path
+    if @url.save
+      flash[:notice] = "Success!"
+      redirect_to urls_path
+    else
+      flash[:notice] = "Invalid URL"
+      redirect_to urls_path
+    end
   end
 
   def show
-    redirect_to "http://#{@url.orig_url}"
+    redirect_to @url.orig_url
   end
 
   private

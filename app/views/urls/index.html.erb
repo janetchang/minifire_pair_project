@@ -3,10 +3,20 @@
 <table>
 <% @urls.each do |url| %>
 <tr>
-  <td><%= link_to url.orig_url, "http://#{url.orig_url}"%></td>
+  <td><%= link_to url.orig_url, url.orig_url%></td>
   <td><%= link_to url.short_url, url.short_url %></td>
   <td><%= url.impressions %></td>
 </tr>
 <% end %>
 </table>
+
+<%= form_for(@url) do |f| %>
+  <%= f.label :orig_url %>
+  <%= f.text_field :orig_url %>
+  <%= f.submit 'Shorten!' %>
+<% end %>
+
+<% if flash[:notice] %>
+  <div id="notice"><%= flash[:notice] %></div>
+<% end %>
 
