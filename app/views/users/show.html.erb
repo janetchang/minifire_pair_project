@@ -1,0 +1,17 @@
+<h1>Your Urls</h1>
+
+<% if @urls.count == 0 %>
+  <h2><%= "You haven't created any urls!" %></h2>
+<% else %>
+  <table>
+  <% @urls.each do |url| %>
+  <tr>
+    <td><%= link_to url.orig_url, url.orig_url%></td>
+    <td><%= link_to url.short_url, "../#{url.short_url}" %></td>
+    <td><%= url.impressions %></td>
+  </tr>
+  <% end %>
+  </table>
+<% end %>
+
+<%= render './layouts/form' %>

@@ -1,0 +1,11 @@
+<%= form_for(@url || Url.new) do |f| %>
+  <% if @user %>
+    <%= f.hidden_field :user_id, value: @user.id %>
+  <% end %>
+
+  <%= f.label :orig_url %>
+  <%= f.text_field :orig_url %>
+  <%= f.label :short_url %>
+  <%= f.text_field :short_url %>
+  <%= f.submit 'Shorten!' %>
+<% end %>

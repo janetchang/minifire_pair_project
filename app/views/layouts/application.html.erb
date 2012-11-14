@@ -8,7 +8,14 @@
 </head>
 <body>
 
+<% if flash %>
+  <div id="notice"><%= flash[:notice] %></div>
+  <div id="error"><%= flash[:error] %></div>
+<% end %>
+
 <%= yield %>
+
+<%= debug params %>
 
 </body>
 </html>

@@ -10,15 +10,5 @@
 <% end %>
 </table>
 
-<%= form_for(@url) do |f| %>
-  <%= f.label :orig_url %>
-  <%= f.text_field :orig_url %>
-  <%= f.label :short_url %>
-  <%= f.text_field :short_url %>
-  <%= f.submit 'Shorten!' %>
-<% end %>
-
-<% if flash[:notice] %>
-  <div id="notice"><%= flash[:notice] %></div>
-<% end %>
+<%= render './layouts/form' %>
 
