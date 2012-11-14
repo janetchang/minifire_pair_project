@@ -1,4 +1,4 @@
-<h1>All Urls</h1>
+<h3>All Urls</h3>
 
 <table>
 <% @urls.each do |url| %>
@@ -10,5 +10,14 @@
 <% end %>
 </table>
 
-<%= render './layouts/form' %>
+<%= render './layouts/form' %><br />
+First time here?
+<%= link_to 'Create Account', new_user_path %><br /><br />
+
+Been here before?
+<%= form_tag(controller: 'users', action: 'get_user_name') do %> 
+  <%= text_field_tag :username %> <br />
+  <%= submit_tag 'Sign In' %>
+<% end %>
+
 

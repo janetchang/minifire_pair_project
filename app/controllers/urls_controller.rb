@@ -20,8 +20,12 @@ class UrlsController < ApplicationController
       flash[:notice] = "Success!"
       redirect_to desired_redirect #need to change to users_user_id_urls_path
     else
+      logger.info { "Errors: #{@url.errors.full_messages}" }
+      logger.info { "User: #{@user}" }
       flash[:notice] = "Invalid URL. Original URL must include 'http' or 'https'. Short URL should be unique."
-      redirect_to desired_redirect #need to change to users_user_id_urls_path
+      @urls = @user.urls
+      render 'users/show'
+      # redirect_to desired_redirect #need to change to users_user_id_urls_path
     end
   end
 

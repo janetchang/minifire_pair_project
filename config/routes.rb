@@ -5,12 +5,14 @@ Shorty::Application.routes.draw do
   #match "/:short_url" => redirect("http://#{Url.find_by_short_url(params[:short_url]).orig_url}")
   #match '/*path' => redirect("http://#{Url.find_by_short_url(*path).orig_url}")
   
-  resources :urls
+  resources :urls, :except => [:show]
   resources :users, :only => [:new, :create]
+
+  match '/:short_url' => 'urls#show', :as => :url, :via => :get
+  match '/user/:username' => 'users#show', :as => :user, :via => :get
+  match 'stuff' => 'users#get_user_name'
   
-  match 'users/:username' => 'users#show'
-  match '/:short_url' => 'urls#show'
-  
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -22,4 +22,9 @@ class UsersController < ApplicationController
     end
   end
 
+  def get_user_name
+    @user_name = params[:username]
+    redirect_to user_path(@user_name)
+  end
+
 end
