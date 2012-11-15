@@ -1,21 +1,13 @@
 <h3>All Urls</h3>
 
-<table>
-<% @urls.each do |url| %>
-<tr>
-  <td><%= link_to url.orig_url, url.orig_url%></td>
-  <td><%= link_to url.short_url, url.short_url %></td>
-  <td><%= url.impressions %></td>
-</tr>
-<% end %>
-</table>
+<%= render 'urls/display_links' %><br />
 
-<%= render './layouts/form' %><br />
+<%= render 'urls/form' %><br />
 First time here?
 <%= link_to 'Create Account', new_user_path %><br /><br />
 
 Been here before?
-<%= form_tag(controller: 'users', action: 'get_user_name') do %> 
+<%= form_tag login_users_path do %> 
   <%= text_field_tag :username %> <br />
   <%= submit_tag 'Sign In' %>
 <% end %>

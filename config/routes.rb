@@ -6,13 +6,19 @@ Shorty::Application.routes.draw do
   #match '/*path' => redirect("http://#{Url.find_by_short_url(*path).orig_url}")
   
   resources :urls, :except => [:show]
-  resources :users, :only => [:new, :create]
+  resources :users, :only => [:new, :create] do
+    collection do
+      post 'login'
+    end
+  end
 
   match '/:short_url' => 'urls#show', :as => :url, :via => :get
   match '/user/:username' => 'users#show', :as => :user, :via => :get
-  match 'stuff' => 'users#get_user_name'
   
-
+  
+  #zzip.it - 33
+  #tinyb.us - 18
+  #linkfi.re, miniwi.re, minifi.re, minihol.la - 46
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
