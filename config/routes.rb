@@ -15,10 +15,6 @@ Shorty::Application.routes.draw do
   match '/:short_url' => 'urls#show', :as => :url, :via => :get
   match '/user/:username' => 'users#show', :as => :user, :via => :get
   
-  
-  #zzip.it - 33
-  #tinyb.us - 18
-  #linkfi.re, miniwi.re, minifi.re, minihol.la - 46
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
