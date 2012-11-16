@@ -30,26 +30,35 @@
 // Example:
 // @linkColor: #ff0000;
 
-h1 {
-  background-color:#6495ed;
-}
 
-h3 {
-  background-color:#6563ed;
-}
-
-head {
-margin-top:0px;
-margin-bottom:0px;
-margin-right:0px;
-margin-left:0px;
-border-top:0px;
-border-bottom:0px;
-border-right:0px;
-border-left:0px;
-}
-
-body { margin-top:0px;
+body { 
+background-color: #000000;
+color: #AABBCC;
+margin-top:10px;
 margin-bottom:25px;
 padding-right:100px;
-padding-left:100px; }
+padding-left:25px; }
+
+.navbar-fixed-top {
+position: fixed;
+top: 0;
+bottom: 50;
+right: 1000;
+left: 0;
+z-index: 1030;
+}
+
+a {
+color: yellow;
+}
+
+.navbar {
+overflow: visible;
+margin-bottom: 18px;
+}
+
+.table-bordered {
+  border: 0px solid #AABBCC;
+  border-left: 20;
+  border-radius: 5px;
+}

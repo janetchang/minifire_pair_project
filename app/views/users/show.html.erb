@@ -1,9 +1,10 @@
-<h3>Your Urls</h3>
-
+<br />
+<br />
 <% if @urls.count == 0 %>
   <h3><%= "You haven't created any urls!" %></h3>
 <% else %>
   <%= render 'urls/display_links' %>
 <% end %>
-
+<br />
+<br />
 <%= render 'urls/form' %>
