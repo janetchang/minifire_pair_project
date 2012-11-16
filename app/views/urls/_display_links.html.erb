@@ -1,8 +1,11 @@
 <table class="table-bordered">
+<tr>
+  <th>Sparks</th><th>Fires</th><th>Logs</th>
+</tr>
 <% @urls.each do |url| %>
 <tr>
   <td><%= link_to url.orig_url, url.orig_url%></td>
-  <td><%= link_to url.short_url_path, url.short_url %></td>
+  <td><%= link_to root_url + url.short_url, url.short_url %></td>
   <td><%= url.impressions %></td>
 </tr>
 <% end %>

@@ -14,7 +14,7 @@ Shorty::Application.routes.draw do
 
   match '/:short_url' => 'urls#show', :as => :url, :via => :get
   match '/user/:username' => 'users#show', :as => :user, :via => :get
-  
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

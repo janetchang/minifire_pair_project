@@ -16,10 +16,6 @@ class Url < ActiveRecord::Base
     self.update_attributes :impressions => self.impressions+1  
   end
 
-  def short_url_path
-    "http://localhost:3000/#{self.short_url}"
-  end
-
   private
 
   def shorten_url

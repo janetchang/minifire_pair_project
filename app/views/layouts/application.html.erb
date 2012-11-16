@@ -2,13 +2,14 @@
 <html>
 <head>
   <title>Minifire</title>
-  <%= image_tag "minifire.jpg" %>
+  <a href=<%=root_url%>>
+    <%= image_tag "minifire.jpg" %>
+  </a>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div class="navbar navbar-fixed-top">
 <% if flash %>
   <div id="notice"><%= flash[:notice] %></div>
   <div id="error"><%= flash[:error] %></div>

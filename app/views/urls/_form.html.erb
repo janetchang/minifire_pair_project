@@ -16,9 +16,9 @@
     <%= f.hidden_field :user_id, value: @user.id %>
   <% end %>
 
-  <%= f.label :orig_url %>
+  <%= f.label "Spark" %>
   <%= f.text_field :orig_url %>
-  <%= f.label :short_url %>
-  <%= f.text_field :short_url %><br />
-  <%= f.submit 'Shorten!' %>
+  <%= f.label "Custom Flame" %>
+  <input placeholder="optional" <%= f.text_field :short_url %><br />
+  <%= f.submit 'Start Minifire' %>
 <% end %>
